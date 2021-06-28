@@ -13,7 +13,8 @@ function Main(props){
       <p>We serve the most {props.adjective} food around.</p>
       <ul style={{textAlign:"left"}}>
         {
-          props.dishes.map((dish) => <li>{dish}</li>)
+          // props.dishes.map((dish,i) => <li key={i}>{dish}</li>)  When we use it as string
+          props.dishes.map((dish) => <li key={dish.id}>{dish.title}</li>) //When we pass as object
         }
       </ul>
     </section>
@@ -34,13 +35,14 @@ const dishes = [
   "Burger",
 ]
 
-
+const dishObjects = dishes.map((dish,i)=> ({id: i, title:dish})); //Object of dishes
 
 function App() {
   return (
     <div className="App">
       <Header name="Dimpal" />
-      <Main adjective="amazing" dishes={dishes} />
+      {/* <Main adjective="amazing" dishes={dishes} /> Using String property */}
+      <Main adjective="amazing" dishes={dishObjects} />
       <Footer year={new Date().getFullYear()} />
     </div>
   );
