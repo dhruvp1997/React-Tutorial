@@ -8,7 +8,9 @@ function RegularComponent(){
   return <h1>Everyone can see this component</h1>
 }
 
-function App(props) {
+function App({authorized}) {
+    // props is a list of objects
+    // here authorized is a object
     /* if(props.authorized){
       return <SecretComponent />
     }
@@ -17,7 +19,7 @@ function App(props) {
     }   Basic conditional rendering*/
     return(
       <>
-      {props.authorized ? <SecretComponent /> : <RegularComponent />} {/*JSX conditional rendering */}
+      {authorized ? <SecretComponent /> : <RegularComponent />} {/*JSX conditional rendering */}
       </>
     )
 }
