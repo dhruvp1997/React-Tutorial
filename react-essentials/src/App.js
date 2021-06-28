@@ -9,12 +9,17 @@ function RegularComponent(){
 }
 
 function App(props) {
-    if(props.authorized){
+    /* if(props.authorized){
       return <SecretComponent />
     }
     else{
       return <RegularComponent />
-    }
+    }   Basic conditional rendering*/
+    return(
+      <>
+      {props.authorized ? <SecretComponent /> : <RegularComponent />} {/*JSX conditional rendering */}
+      </>
+    )
 }
 
 export default App;
