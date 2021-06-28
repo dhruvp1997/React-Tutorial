@@ -42,7 +42,7 @@ const dishObjects = dishes.map((dish,i)=> ({id: i, title:dish})); //Object of di
 
 function App() {
   return (
-    <div className="App">
+    <div className="App"> {/* we can also wrap over here like index.js */}
       <Header name="Dimpal" />
       {/* <Main adjective="amazing" dishes={dishes} /> Using String property */}
       <Main adjective="amazing" dishes={dishObjects} />
