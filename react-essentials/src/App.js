@@ -1,4 +1,5 @@
 import './App.css';
+import restaurant from "./restaurant.jpg"
 
 function Header(props){
   return(
@@ -11,6 +12,8 @@ function Main(props){
   return(
     <section>
       <p>We serve the most {props.adjective} food around.</p>
+      {/* <img src="https://github.com/dhruvp1997.png" height={200}/> */}
+      <img src={restaurant} height={200} alt="Fancy Restaurant"/>
       <ul style={{textAlign:"left"}}>
         {
           // props.dishes.map((dish,i) => <li key={i}>{dish}</li>)  When we use it as string
