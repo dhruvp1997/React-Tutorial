@@ -1,12 +1,10 @@
-import React, {useState} from "react";
+import React, {useReducer} from "react";
 import './App.css';
 
 function App() {
-  const [checked, setChecked] = useState(false);
-  
-  function toggle(){
-    setChecked((checked)=> !checked)
-  }
+  //const [checked, setChecked] = useState(false); //useState will take one argument
+  const [checked,toggle] = useReducer((checked)=> !checked,false); //useReduser will take two argument
+  //it takes old state and update with new state
 
   return(
       <>
