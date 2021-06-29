@@ -1,16 +1,25 @@
-import React, {useReducer} from "react";
+import React, {useState, useEffect} from "react";
 import './App.css';
 
-function App() {
-  //const [checked, setChecked] = useState(false); //useState will take one argument
-  const [checked,toggle] = useReducer((checked)=> !checked,false); //useReduser will take two argument
-  //it takes old state and update with new state
+// https://api.github.com/users/dhruvp1997
+
+function App({login}) {
+  const [data, setData] = useState(null);
+
+  useEffect(()=> {
+    fetch(`https://api.github.com/users/${login}`)
+    .then((response)=> response.json())
+    .then(setData);
+  },[]);
+
+  if(data){
+    return <div>{JSON.stringify(data)}</div>;
+  }
 
   return(
-      <>
-        <input type="checkbox" value={checked} onChange={toggle}/>
-        <p>{checked ? "checked": "not checked"}</p>
-      </>
+      <div>
+        No user available
+      </div>
     )
 }
 
