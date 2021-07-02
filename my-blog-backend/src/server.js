@@ -10,10 +10,6 @@ const articlesInfo = {
         upvotes: 0,
         comments: [],
     },
-    'my-thoughts-on-resumes': {
-        upvotes: 0,
-        comments: [],
-    },
 }
 
 const app = express();
