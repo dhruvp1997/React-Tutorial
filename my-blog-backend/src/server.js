@@ -27,13 +27,13 @@ app.post('/api/articles/:name/upvote', (req, res) => {
     res.status(200).send(`${articleName} now has ${articlesInfo[articleName].upvotes} upvotes!`);
 });
 
-app.post('/api/articles/:name/add-comment',(req,res)=> {
-    const {username,text} = req.body;
+app.post('/api/articles/:name/add-comment', (req, res) => {
+    const { username, text } = req.body;
     const articleName = req.params.name;
 
-    articlesInfo[articleName].comments.push({username, text});
+    articlesInfo[articleName].comments.push({ username, text });
 
     res.status(200).send(articlesInfo[articleName]);
-})
+});
 
 app.listen(8000, () => console.log('Listening on port 8000'));
